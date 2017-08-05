@@ -1,0 +1,24 @@
+/*
+ * MEDIUM LAYOUT
+ ----------------------------------------------- */
+
+@media (max-width: 1000px) {
+  .arpw-li {
+    width: 50%;
+    margin: 0 25%;
+  }
+  .arpw-text-container {
+    padding: 10px 5%;
+  }
+  .arpw-text-container h3 {
+    font-size: 20px
+  }
+  .logo-container img {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .logo {
+    display: block;
+    margin: 0 auto;
+  }
+}

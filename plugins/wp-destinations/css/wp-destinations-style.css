@@ -1,0 +1,98 @@
+/*
+ * MODAL
+------------------------------------------------------------ */
+
+/* The Modal (background) */
+.post-modal-behind {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content/Box */
+.post-modal {
+    background-color: #fefefe;
+    z-index: 10000; /* Sit on top */
+    margin: 5% auto;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 0 black;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+.close {
+    border: thin solid #ffffff;
+}
+.inactive-link {
+    pointer-events: none;
+}
+.active-link {
+    pointer-events: initial;
+}
+.modal-header {
+    border-bottom: thin solid gray;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+}
+.modal-nav {
+    position: absolute;
+    margin-left: -42px;
+    margin-top: -42px;
+}
+@media screen and (max-width: 780px) {
+    .modal-nav {
+        margin-left: -42px;
+        margin-top: -42px;
+    }
+}
+.modal-header,
+.modal-body {
+    padding: 15px;
+}
+/*.inactive-post {*/
+    /*display: none;*/
+/*}*/
+.modal-body {
+    clear: both;
+    overflow: hidden;
+}
+.modal-body .feature-image img {
+    width: 100%;
+    height: 100%;
+}
+.post-modal h3 {
+    margin: 10px 0;
+}
+/* The Close Button */
+.clearfix {
+    overflow: auto;
+}
+.close {
+    display: table-cell;
+    vertical-align: middle;
+}
+.close:hover,
+.close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+@media (max-width: 780px) {
+    .post-modal {
+        margin: 10% 6%;
+        width: 88%; /* Could be more or less, depending on screen size */
+    }
+}
+#map {
+    width: 100%;
+    height: 80%;
+    margin: -50px auto;
+    z-index: 500;
+    min-height: 80vh;
+    max-height: 600px;
+    box-shadow: 0 0 6px #000000;
+}

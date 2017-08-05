@@ -1,0 +1,54 @@
+/*
+ * SMALL LAYOUT
+ ----------------------------------------------- */
+
+@media (max-width: 700px) {
+  .header {
+    margin-top: -75px;
+  }
+  #map {
+    width: 100%;
+    margin: 0 0 -40px 0;
+    height: 600px;
+  }
+  #nav_menu {
+    display: none;
+  }
+  #gallery-1 .gallery-item {
+    width: 100% !important;
+  }
+  .arpw-li {
+    width: 90%;
+    margin: 0 5%;
+  }
+  .arpw-summary {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  .arpw-li h3 {
+    margin: 15px 0 10px;
+  }
+  .arpw-li p {
+    margin: 10px 0;
+  }
+  .read-more {
+    margin-top: 5px;
+  }
+  .logo-container img {
+    margin: 100px auto 0 auto;
+  }
+  .social-nav .fa-3x {
+    font-size: 2em;
+  }
+  .social-nav li {
+    width: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0 3%;
+  }
+  .footer #menu-primary-1 {
+    display: none;
+  }
+}

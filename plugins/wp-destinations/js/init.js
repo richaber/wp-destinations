@@ -16,28 +16,27 @@ function initialize() {
 	for (var i = 0; i < locations.length; i++) {
 		// Create new variables for the id, address, latitudes, longitudes and marker positions
 		var marker_id = locations[i].marker_id;
-        var marker_address = locations [i].marker_address;
-        var map_marker_lat = locations[i].marker_lat;
-        var map_marker_long = locations[i].marker_long;
-        var position = new google.maps.LatLng(parseFloat(map_marker_lat),parseFloat(map_marker_long));
-        // Creates a new google Map marker from the marker variables
+        	var marker_address = locations [i].marker_address;
+        	var map_marker_lat = locations[i].marker_lat;
+        	var map_marker_long = locations[i].marker_long;
+        	var position = new google.maps.LatLng(parseFloat(map_marker_lat),parseFloat(map_marker_long));
+        	// Creates a new google Map marker from the marker variables
 		var marker = new google.maps.Marker({
-			map: map,
-            icon: {
-			    url: "/uptownvine/wp-content/themes/uptownvine/assets/img/uv-i.png",
-                scaledSize: new google.maps.Size(35, 35)
-            },
+				map: map,
+            			icon: {
+				url: "/uptownvine/wp-content/themes/uptownvine/assets/img/uv-i.png",
+                		scaledSize: new google.maps.Size(35, 35)
+			},
 			position: position,
 			title: marker_address,
 			id: marker_id
 		});
-        markers.push(marker);
-        var markerCluster = new MarkerClusterer(map, marker, {
-            imagePath: "/uptownvine/wp-content/themes/uptownvine/assets/img/cluster-i.png"
-        });
-
-        // Run Attach Content using the marker and marker ID variables as parameters
-        attachContent(marker, marker_id);
+        	markers.push(marker);
+        	var markerCluster = new MarkerClusterer(map, marker, {
+            		imagePath: "/uptownvine/wp-content/themes/uptownvine/assets/img/cluster-i.png"
+        	});
+        	// Run Attach Content using the marker and marker ID variables as parameters
+        	attachContent(marker, marker_id);
 	}
     /*
      * The Attach Content Function runs with the marker and markerContent to be input as Paramaters

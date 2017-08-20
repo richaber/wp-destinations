@@ -141,7 +141,7 @@ function wp_destinations_meta_box_callback( $object ) {
 			<?php esc_html_e( 'Add a location address', 'wp-destinations' ); ?>
 		</label>
 		<br/>
-		<input class='widefat' type='text' name='wp-destinations-address' id='wp-destinations-address'
+		<input class='widefat' name='wp-destinations-address' id='wp-destinations-address'
 			   value='<?php echo esc_attr( wp_destinations_new_address_detail( $wp_destinations_address ) ); ?>' size='30'/>
 		<a id="get-coords" class="button widefat button-primary button-large" style="margin: 10px 0 10px 0;"
 		   onclick="getWPDestinationCoords();">
@@ -151,14 +151,14 @@ function wp_destinations_meta_box_callback( $object ) {
 			<?php esc_html_e( 'Latitude', 'wp-destinations' ); ?>
 		</label>
 		<br/>
-		<input type='text' name='wp-destinations-post-lats' id='wp-destinations-post-lats'
+		<input name='wp-destinations-post-lats' id='wp-destinations-post-lats'
 			   value='<?php echo esc_attr( $get_latitude ); ?>' size='30'/>
 		<br/>
 		<label for='wp-destinations-post-longs'>
 			<?php esc_html_e( 'Longitude', 'wp-destinations' ); ?>
 		</label>
 		<br/>
-		<input type='text' name='wp-destinations-post-longs' id='wp-destinations-post-longs'
+		<input name='wp-destinations-post-longs' id='wp-destinations-post-longs'
 			   value='<?php echo esc_attr( $get_longitude ); ?>' size='30'/>
 	</p>
 	<div id='admin-map' style='height: 300px; width: 100%;'></div>

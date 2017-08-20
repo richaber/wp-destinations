@@ -112,7 +112,7 @@ function google_geocode_enqueue( $hook ) {
 function wp_destinations_add_post_meta_boxes() {
 	add_meta_box(
 		'wp-destinations',
-		esc_html__( 'WP Destinations', 'WP Destinations' ),
+		esc_html__( 'WP Destinations', 'wp-destinations' ),
 		'wp_destinations_meta_box_callback',
 		'post',
 		'normal',
@@ -137,19 +137,25 @@ function wp_destinations_meta_box_callback( $object ) {
 	?>
 	<p>
 		<label for='wp-destinations-address'>
-			<?php _e( 'Add a location address', 'example' ); ?>
+			<?php _e( 'Add a location address', 'wp-destinations' ); ?>
 		</label>
 		<br/>
 		<input class='widefat' type='text' name='wp-destinations-address' id='wp-destinations-address'
 			   value='<?php echo new_address_detail( $wp_destinations_address ); ?>' size='30'/>
 		<a id="get-coords" class="button widefat button-primary button-large" style="margin: 10px 0 10px 0;"
-		   onclick="getWPDestinationCoords();">Get the Coordinates</a>
-		<label for='wp-destinations-post-lats'>Latitude</label>
+		   onclick="getWPDestinationCoords();">
+			<?php esc_html_e( 'Get the Coordinates', 'wp-destinations' ); ?>
+		</a>
+		<label for='wp-destinations-post-lats'>
+			<?php esc_html_e( 'Latitude', 'wp-destinations' ); ?>
+		</label>
 		<br/>
 		<input type='text' name='wp-destinations-post-lats' id='wp-destinations-post-lats'
 			   value='<?php echo $get_latitude; ?>' size='30'/>
 		<br/>
-		<label for='wp-destinations-post-longs'>Longitude</label>
+		<label for='wp-destinations-post-longs'>
+			<?php esc_html_e( 'Longitude', 'wp-destinations' ); ?>
+		</label>
 		<br/>
 		<input type='text' name='wp-destinations-post-longs' id='wp-destinations-post-longs'
 			   value='<?php echo $get_longitude; ?>' size='30'/>

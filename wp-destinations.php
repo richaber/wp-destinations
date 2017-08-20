@@ -197,13 +197,13 @@ function wp_destinations_save_post_meta( $post_id, $post ) {
 		add_post_meta( $post_id, $meta_address_key, $new_address_meta_value, true );
 		add_post_meta( $post_id, $meta_latitude_key, $new_latitude_meta_value, true );
 		add_post_meta( $post_id, $meta_longitude_key, $new_longitude_meta_value, true );
-	} // If the new meta value does not match the old value, update it
-	else if ( $new_address_meta_value && $new_address_meta_value !== $meta_address_value ) {
+	} elseif ( $new_address_meta_value && $new_address_meta_value !== $meta_address_value ) {
+		// If the new meta value does not match the old value, update it
 		update_post_meta( $post_id, $meta_address_key, $new_address_meta_value );
 		update_post_meta( $post_id, $meta_latitude_key, $new_latitude_meta_value );
 		update_post_meta( $post_id, $meta_longitude_key, $new_longitude_meta_value );
-	} // If there is no new meta value but an old value exists, delete it
-	else if ( '' === $new_address_meta_value && $meta_address_value ) {
+	} elseif ( '' === $new_address_meta_value && $meta_address_value ) {
+		// If there is no new meta value but an old value exists, delete it
 		delete_post_meta( $post_id, $meta_address_key, $new_address_meta_value );
 		delete_post_meta( $post_id, $meta_latitude_key, $new_latitude_meta_value );
 		delete_post_meta( $post_id, $meta_longitude_key, $new_longitude_meta_value );

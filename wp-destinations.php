@@ -13,9 +13,6 @@
  * email: jessewollin@gmail.com
  */
 
-// Start the engines!
-add_action( 'load-post.php', 'wp_destinations_setup' );
-add_action( 'load-post-new.php', 'wp_destinations_setup' );
 // Set it up gangsta!
 function wp_destinations_setup() {
 	// Alright sparky, give me an admin page.
@@ -47,10 +44,10 @@ function wp_destinations_setup() {
 	);
 }
 
-add_action(
-	'wp_enqueue_scripts',
-	'load_jquery'
-);
+// Start the engines!
+add_action( 'load-post.php', 'wp_destinations_setup' );
+add_action( 'load-post-new.php', 'wp_destinations_setup' );
+
 function wp_destination_frontend_scripts() {
 	wp_register_script(
 		'map-init',

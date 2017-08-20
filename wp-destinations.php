@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Plugin Name: WP Destinations
  * Plugin URI: http://www.jessewollin.com/uptownvine
  * Description: WP Destinations gives you the ability to create a map on the front of the site with the ability to see the posts through using modals.
@@ -10,9 +10,13 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: wp-destinations
  * Domain Path: /languages
+ * Requires at least: 4.8
+ * Tested up to: 4.8.1
  *
  * Copyright 2016 Jesse Wollin
  * email: jessewollin@gmail.com
+ *
+ * @package WP_Destinations
  */
 
 // Exit if accessed directly.

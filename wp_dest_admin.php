@@ -1,3 +1,9 @@
+<?php
+/**
+ * What is the purpose of this file?
+ */
+
+?>
 <div class="wrap">
   <h2>WP Destinations</h2>
 

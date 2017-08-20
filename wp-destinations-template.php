@@ -1,4 +1,9 @@
-<?php class wp_destinations_template {
+<?php
+/**
+ * What is the purpose of this file?
+ */
+
+class wp_destinations_template {
 
     /*
      *  Unique Identifier

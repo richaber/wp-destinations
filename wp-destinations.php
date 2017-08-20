@@ -94,9 +94,10 @@ function wp_destination_frontend_scripts() {
 add_action( 'wp_enqueue_scripts', 'wp_destination_frontend_scripts' );
 function google_geocode_enqueue( $hook ) {
 
-	if ( $hook !== 'edit.php' && $hook !== 'post.php' && $hook !== 'post-new.php' ) {
+	if ( 'edit.php' !== $hook && 'post.php' !== $hook && 'post-new.php' !== $hook ) {
 		return;
 	}
+
 	wp_enqueue_script(
 		'google-map',
 		'https://maps.googleapis.com/maps/api/js?key=AIzaSyD63RYEq0JDHrSHggZMFFcOFfsSd35lld0'
@@ -128,10 +129,10 @@ function wp_destinations_meta_box_callback( $object ) {
 	$get_longitude           = esc_attr( get_post_meta( $object->ID, 'wp_destinations_longitude', true ) );
 	$get_latitude            = str_replace( '-', '.', $get_latitude );
 	$get_longitude           = str_replace( '-', '.', $get_longitude );
-	if ( $get_latitude[0] === '.' ) {
+	if ( '.' === $get_latitude[0] ) {
 		$get_latitude[0] = str_replace( '.', '-', $get_latitude[0] );
 	}
-	if ( $get_longitude[0] === '.' ) {
+	if ( '.' === $get_longitude[0] ) {
 		$get_longitude[0] = str_replace( '.', '-', $get_longitude[0] );
 	}
 	?>

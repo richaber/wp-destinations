@@ -32,7 +32,7 @@ function wp_destinations_setup() {
 	// Add javascript for google map inside Post Editing.
 	add_action(
 		'admin_enqueue_scripts',
-		'google_geocode_enqueue',
+		'wp_destinations_google_geocode_enqueue',
 		20,
 		1.2,
 		true
@@ -91,7 +91,8 @@ function wp_destination_frontend_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'wp_destination_frontend_scripts' );
-function google_geocode_enqueue( $hook ) {
+
+function wp_destinations_google_geocode_enqueue( $hook ) {
 
 	if ( 'edit.php' !== $hook && 'post.php' !== $hook && 'post-new.php' !== $hook ) {
 		return;
@@ -141,7 +142,7 @@ function wp_destinations_meta_box_callback( $object ) {
 		</label>
 		<br/>
 		<input class='widefat' type='text' name='wp-destinations-address' id='wp-destinations-address'
-			   value='<?php echo esc_attr( new_address_detail( $wp_destinations_address ) ); ?>' size='30'/>
+			   value='<?php echo esc_attr( wp_destinations_new_address_detail( $wp_destinations_address ) ); ?>' size='30'/>
 		<a id="get-coords" class="button widefat button-primary button-large" style="margin: 10px 0 10px 0;"
 		   onclick="getWPDestinationCoords();">
 			<?php esc_html_e( 'Get the Coordinates', 'wp-destinations' ); ?>
@@ -165,7 +166,7 @@ function wp_destinations_meta_box_callback( $object ) {
 }
 
 // Returns string without dashes.
-function new_address_detail( $wp_destinations_location_string ) {
+function wp_destinations_new_address_detail( $wp_destinations_location_string ) {
 	$wp_destinations_location_string = str_replace( '-', ' ', $wp_destinations_location_string );
 
 	return $wp_destinations_location_string;

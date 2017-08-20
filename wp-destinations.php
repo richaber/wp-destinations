@@ -15,6 +15,11 @@
  * email: jessewollin@gmail.com
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 // Set it up gangsta!
 function wp_destinations_setup() {
 	// Alright sparky, give me an admin page.

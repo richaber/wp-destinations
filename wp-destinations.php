@@ -165,9 +165,12 @@ function new_address_detail( $wp_destinations_location_string ) {
 }
 
 function wp_destinations_save_post_meta( $post_id, $post ) {
+
 	// Verify the nonce before proceeding
-	if ( ! isset( $_POST['wp_destinations_meta_boxes_nonce'] ) || ! wp_verify_nonce( $_POST['wp_destinations_meta_boxes_nonce'],
-	                                                                                 basename( __FILE__ ) ) ) {
+	if (
+		! isset( $_POST['wp_destinations_meta_boxes_nonce'] )
+		|| ! wp_verify_nonce( $_POST['wp_destinations_meta_boxes_nonce'], basename( __FILE__ ) )
+	) {
 		return $post_id;
 	}
 

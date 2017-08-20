@@ -93,7 +93,8 @@ function wp_destination_frontend_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'wp_destination_frontend_scripts' );
 function google_geocode_enqueue( $hook ) {
-	if ( $hook != 'edit.php' && $hook != 'post.php' && $hook != 'post-new.php' ) {
+
+	if ( $hook !== 'edit.php' && $hook !== 'post.php' && $hook !== 'post-new.php' ) {
 		return;
 	}
 	wp_enqueue_script(
@@ -127,10 +128,10 @@ function wp_destinations_meta_box_callback( $object ) {
 	$get_longitude           = esc_attr( get_post_meta( $object->ID, 'wp_destinations_longitude', true ) );
 	$get_latitude            = str_replace( '-', '.', $get_latitude );
 	$get_longitude           = str_replace( '-', '.', $get_longitude );
-	if ( $get_latitude[0] == '.' ) {
+	if ( $get_latitude[0] === '.' ) {
 		$get_latitude[0] = str_replace( '.', '-', $get_latitude[0] );
 	}
-	if ( $get_longitude[0] == '.' ) {
+	if ( $get_longitude[0] === '.' ) {
 		$get_longitude[0] = str_replace( '.', '-', $get_longitude[0] );
 	}
 	?>
@@ -191,17 +192,17 @@ function wp_destinations_save_post_meta( $post_id, $post ) {
 	$meta_address_value = get_post_meta( $post_id, $meta_address_key, true );
 
 	// If a new meta value was added and there was no previous value, add it
-	if ( $new_address_meta_value && '' == $meta_address_value ) {
+	if ( $new_address_meta_value && '' === $meta_address_value ) {
 		add_post_meta( $post_id, $meta_address_key, $new_address_meta_value, true );
 		add_post_meta( $post_id, $meta_latitude_key, $new_latitude_meta_value, true );
 		add_post_meta( $post_id, $meta_longitude_key, $new_longitude_meta_value, true );
 	} // If the new meta value does not match the old value, update it
-	else if ( $new_address_meta_value && $new_address_meta_value != $meta_address_value ) {
+	else if ( $new_address_meta_value && $new_address_meta_value !== $meta_address_value ) {
 		update_post_meta( $post_id, $meta_address_key, $new_address_meta_value );
 		update_post_meta( $post_id, $meta_latitude_key, $new_latitude_meta_value );
 		update_post_meta( $post_id, $meta_longitude_key, $new_longitude_meta_value );
 	} // If there is no new meta value but an old value exists, delete it
-	else if ( '' == $new_address_meta_value && $meta_address_value ) {
+	else if ( '' === $new_address_meta_value && $meta_address_value ) {
 		delete_post_meta( $post_id, $meta_address_key, $new_address_meta_value );
 		delete_post_meta( $post_id, $meta_latitude_key, $new_latitude_meta_value );
 		delete_post_meta( $post_id, $meta_longitude_key, $new_longitude_meta_value );

@@ -1,18 +1,3 @@
-################################################################################
-# WPEngine's suggested .gitignore
-#
-# Ignores WordPress Core!
-#
-# @see  DEPLOY YOUR WP ENGINE HOSTED APPLICATION WITH THE EASE OF GIT
-# @link https://wpengine.com/git/
-# @see  SHOULD I VERSION WORDPRESS CORE ALONG WITH MY THEMES/PLUGINS?
-# @link https://wpengine.com/git/#toc_3
-# @see  DEPLOYING TO PRODUCTION
-# @link https://wpengine.com/git/#production
-# @see  DEPLOYING TO STAGING
-# @link https://wpengine.com/git/#staging
-################################################################################
-
 # Ignore OS files #
 ###################
 ._*
@@ -63,78 +48,14 @@ deploy.ini
 node_modules
 parameters.yml
 error_log
+.htaccess
 
 # Ignore Other VCSs #
 #####################
 .hg
 .svn
 
-# WordPress specific #
-######################
-.htaccess
-wp-config.php
-wp-content/uploads/
-wp-content/blogs.dir/
-wp-content/upgrade/*
-wp-content/backup-db/*
-wp-content/advanced-cache.php
-wp-content/wp-cache-config.php
-wp-content/cache/*
-wp-content/cache/supercache/*
-
-# WPEngine specific #
-#####################
-.smushit-status
-.gitattributes
-_wpeprivate
-wp-content/object-cache.php
-wp-content/mu-plugins/mu-plugin.php
-wp-content/mu-plugins/force-strong-passwords
-wp-content/mu-plugins/slt-force-strong-passwords.php
-wp-content/mu-plugins/limit-login-attempts
-wp-content/mu-plugins/wpengine-common
-wp-content/mysql.sql
-wp-content/plugins/hyperdb/
-wp-content/plugins/hyperdb-1-1/
-
-# WP Core (as of 3.4.1) #
-#########################
-/db-config.php
-/index.php
-/license.txt
-/readme.html
-/wp-activate.php
-/wp-app.php
-/wp-atom.php
-/wp-blog-header.php
-/wp-comments-post.php
-/wp-commentsrss2.php
-/wp-config-sample.php
-/wp-cron.php
-/wp-feed.php
-/wp-links-opml.php
-/wp-load.php
-/wp-login.php
-/wp-mail.php
-/wp-rdf.php
-/wp-rss.php
-/wp-rss2.php
-/wp-pass.php
-/wp-register.php
-/wp-settings.php
-/wp-signup.php
-/wp-trackback.php
-/xmlrpc.php
-/wp-admin
-/wp-includes
-/wp-content/index.php
-/wp-content/themes/twentyten
-/wp-content/themes/index.php
-/wp-content/plugins/index.php
-/wp-content/debug.log
-
 # large/disallowed file types    #
-# a CDN should be used for these #
 ##################################
 *.hqx
 *.bin
@@ -168,29 +89,3 @@ wp-content/plugins/hyperdb-1-1/
 *.asf
 *.wmv
 *.avi
-
-# Ignore Dev Plugins #
-######################
-wp-content/plugins/debug-bar-actions-and-filters-addon
-wp-content/plugins/debug-bar-constants
-wp-content/plugins/debug-bar-console
-wp-content/plugins/debug-bar-cron
-wp-content/plugins/debug-bar-list-dependencies
-wp-content/plugins/debug-bar-post-types
-wp-content/plugins/debug-bar-remote-requests
-wp-content/plugins/debug-bar-roles-and-capabilities
-wp-content/plugins/debug-bar-shortcodes
-wp-content/plugins/debug-bar-transients
-wp-content/plugins/debug-bar-extender
-wp-content/plugins/debug-bar
-wp-content/plugins/developer
-wp-content/plugins/log-deprecated-notices
-wp-content/plugins/monster-widget
-wp-content/plugins/rewrite-rules-inspector
-wp-content/plugins/theme-check
-wp-content/plugins/transients-manager
-wp-content/plugins/query-monitor
-wp-content/plugins/simply-show-ids
-wp-content/plugins/user-switching
-wp-content/plugins/vip-scanner
-wp-content/db.php

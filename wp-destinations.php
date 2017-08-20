@@ -137,7 +137,7 @@ function wp_destinations_meta_box_callback( $object ) {
 	?>
 	<p>
 		<label for='wp-destinations-address'>
-			<?php _e( 'Add a location address', 'wp-destinations' ); ?>
+			<?php esc_html_e( 'Add a location address', 'wp-destinations' ); ?>
 		</label>
 		<br/>
 		<input class='widefat' type='text' name='wp-destinations-address' id='wp-destinations-address'

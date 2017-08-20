@@ -8,6 +8,8 @@
  * Author URI: http://www.jessewollin.com
  * License: GPLv2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: wp-destinations
+ * Domain Path: /languages
  *
  * Copyright 2016 Jesse Wollin
  * email: jessewollin@gmail.com
@@ -134,7 +136,9 @@ function wp_destinations_meta_box_callback( $object ) {
 	}
 	?>
 	<p>
-		<label for='wp-destinations-address'><?php _e( 'Add a location address', 'example' ); ?></label>
+		<label for='wp-destinations-address'>
+			<?php _e( 'Add a location address', 'example' ); ?>
+		</label>
 		<br/>
 		<input class='widefat' type='text' name='wp-destinations-address' id='wp-destinations-address'
 			   value='<?php echo new_address_detail( $wp_destinations_address ); ?>' size='30'/>

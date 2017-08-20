@@ -18,19 +18,19 @@ add_action( 'load-post.php', 'wp_destinations_setup' );
 add_action( 'load-post-new.php', 'wp_destinations_setup' );
 // Set it up gangsta!
 function wp_destinations_setup() {
-	// Alright sparky, give me an admin page
+	// Alright sparky, give me an admin page.
 	add_action(
 		'admin_menu',
 		'wp_destinations_admin_page'
 	);
-	// Add meta boxes on the 'add_meta_boxes' hook
+	// Add meta boxes on the 'add_meta_boxes' hook.
 	add_action(
 		'add_meta_boxes',
 		'wp_destinations_add_post_meta_boxes',
 		10,
 		2
 	);
-	// Add javascript for google map inside Post Editing
+	// Add javascript for google map inside Post Editing.
 	add_action(
 		'admin_enqueue_scripts',
 		'google_geocode_enqueue',
@@ -38,7 +38,7 @@ function wp_destinations_setup() {
 		1.2,
 		true
 	);
-	// Save post meta boxes on the 'save_post' hook
+	// Save post meta boxes on the 'save_post' hook.
 	add_action(
 		'save_post',
 		'wp_destinations_save_post_meta',
@@ -109,19 +109,19 @@ function google_geocode_enqueue( $hook ) {
 	);
 }
 
-// Create one or more meta boxes to be displayed on the post editor screen
+// Create one or more meta boxes to be displayed on the post editor screen.
 function wp_destinations_add_post_meta_boxes() {
 	add_meta_box(
-		'wp-destinations',                                  // Unique ID
-		esc_html__( 'WP Destinations', 'WP Destinations' ), // Title
-		'wp_destinations_meta_box_callback',                // Callback Function
-		'post',                                            // Admin Post
-		'normal',                                            // Context
-		'high'                                                // Priority
+		'wp-destinations',
+		esc_html__( 'WP Destinations', 'WP Destinations' ),
+		'wp_destinations_meta_box_callback',
+		'post',
+		'normal',
+		'high'
 	);
 }
 
-// Display the post meta box
+// Display the post meta box.
 function wp_destinations_meta_box_callback( $object ) {
 	wp_nonce_field( basename( __FILE__ ), 'wp_destinations_meta_boxes_nonce' );
 	$wp_destinations_address = esc_attr( get_post_meta( $object->ID, 'wp_destinations_address', true ) );
@@ -157,7 +157,7 @@ function wp_destinations_meta_box_callback( $object ) {
 	<?php
 }
 
-// Returns string without dashes
+// Returns string without dashes.
 function new_address_detail( $wp_destinations_location_string ) {
 	$wp_destinations_location_string = str_replace( '-', ' ', $wp_destinations_location_string );
 
@@ -166,7 +166,7 @@ function new_address_detail( $wp_destinations_location_string ) {
 
 function wp_destinations_save_post_meta( $post_id, $post ) {
 
-	// Verify the nonce before proceeding
+	// Verify the nonce before proceeding.
 	if (
 		! isset( $_POST['wp_destinations_meta_boxes_nonce'] )
 		|| ! wp_verify_nonce( $_POST['wp_destinations_meta_boxes_nonce'], basename( __FILE__ ) )
@@ -177,12 +177,12 @@ function wp_destinations_save_post_meta( $post_id, $post ) {
 	// Get the post type object.
 	$post_type = get_post_type_object( $post->post_type );
 
-	// Check if the current user has permission to edit the post
+	// Check if the current user has permission to edit the post.
 	if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
 		return $post_id;
 	}
 
-	// Get the posted data and sanitize it for use as an HTML class
+	// Get the posted data and sanitize it for use as an HTML class.
 	$new_address_meta_value   = ( isset( $_POST['wp-destinations-address'] ) ? sanitize_title_with_dashes( $_POST['wp-destinations-address'] ) : '' );
 	$new_latitude_meta_value  = ( isset( $_POST['wp-destinations-post-lats'] ) ? sanitize_text_field( $_POST['wp-destinations-post-lats'] ) : '' );
 	$new_longitude_meta_value = ( isset( $_POST['wp-destinations-post-longs'] ) ? sanitize_text_field( $_POST['wp-destinations-post-longs'] ) : '' );
@@ -192,21 +192,21 @@ function wp_destinations_save_post_meta( $post_id, $post ) {
 	$meta_latitude_key  = 'wp_destinations_latitude';
 	$meta_longitude_key = 'wp_destinations_longitude';
 
-	// Get the meta value of the custom field key
+	// Get the meta value of the custom field key.
 	$meta_address_value = get_post_meta( $post_id, $meta_address_key, true );
 
-	// If a new meta value was added and there was no previous value, add it
+	// If a new meta value was added and there was no previous value, add it.
 	if ( $new_address_meta_value && '' === $meta_address_value ) {
 		add_post_meta( $post_id, $meta_address_key, $new_address_meta_value, true );
 		add_post_meta( $post_id, $meta_latitude_key, $new_latitude_meta_value, true );
 		add_post_meta( $post_id, $meta_longitude_key, $new_longitude_meta_value, true );
 	} elseif ( $new_address_meta_value && $new_address_meta_value !== $meta_address_value ) {
-		// If the new meta value does not match the old value, update it
+		// If the new meta value does not match the old value, update it.
 		update_post_meta( $post_id, $meta_address_key, $new_address_meta_value );
 		update_post_meta( $post_id, $meta_latitude_key, $new_latitude_meta_value );
 		update_post_meta( $post_id, $meta_longitude_key, $new_longitude_meta_value );
 	} elseif ( '' === $new_address_meta_value && $meta_address_value ) {
-		// If there is no new meta value but an old value exists, delete it
+		// If there is no new meta value but an old value exists, delete it.
 		delete_post_meta( $post_id, $meta_address_key, $new_address_meta_value );
 		delete_post_meta( $post_id, $meta_latitude_key, $new_latitude_meta_value );
 		delete_post_meta( $post_id, $meta_longitude_key, $new_longitude_meta_value );

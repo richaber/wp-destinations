@@ -1,0 +1,50 @@
+{
+  "name"              : "vohlin/wp-destinations",
+  "description"       : "Add GeoData to your WordPress posts.",
+  "keywords"          : [
+    "wordpress"
+  ],
+  "homepage"          : "http://www.jessewollin.com/uptownvine",
+  "license"           : "GPL-2.0+",
+  "authors"           : [
+    {
+      "name"     : "Jesse Wollin",
+      "email"    : "jessewollin@gmail.com",
+      "homepage" : "http://www.jessewollin.com",
+      "role"     : "Developer"
+    },
+    {
+      "name"     : "Richard Aber",
+      "email"    : "richaber@gmail.com",
+      "homepage" : "http://richaber.com",
+      "role"     : "Developer"
+    }
+  ],
+  "type"              : "wordpress-plugin",
+  "require"           : {
+    "xrstf/composer-php52" : "^1.0.20"
+  },
+  "minimum-stability" : "dev",
+  "prefer-stable"     : true,
+  "autoload"          : {
+    "classmap"              : [
+      "src/"
+    ],
+    "exclude-from-classmap" : [
+      "index.php",
+      "test/",
+      "tests/"
+    ]
+  },
+  "scripts"           : {
+    "post-install-cmd"   : [
+      "xrstf\\Composer52\\Generator::onPostInstallCmd"
+    ],
+    "post-update-cmd"    : [
+      "xrstf\\Composer52\\Generator::onPostInstallCmd"
+    ],
+    "post-autoload-dump" : [
+      "xrstf\\Composer52\\Generator::onPostInstallCmd"
+    ]
+  }
+}

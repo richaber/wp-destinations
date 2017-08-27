@@ -3,7 +3,7 @@ Contributors: jwollin
 Tags: point of interest,poi,map markers,blog map,post map,geocode,geocode post,google maps,map,maps
 Requires at least: 4.8
 Tested up to: 4.8.1
-Stable tag: 1.0
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,5 +41,5 @@ Google’s official instructions for creating Google Maps JavaScript API keys ca
 == Screenshots ==
 
 == Changelog ==
-= 1.0 =
+= 1.0.0 =
 * Initial version

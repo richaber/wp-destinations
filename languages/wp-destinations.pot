@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WP Destinations\n"
-"POT-Creation-Date: 2017-08-20 16:22-0500\n"
+"POT-Creation-Date: 2017-08-26 22:19-0500\n"
 "PO-Revision-Date: 2017-08-20 16:22-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -16,30 +16,63 @@ msgstr ""
 "X-Poedit-WPHeader: wp-destinations.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #. Plugin Name of the plugin/theme
-#: wp-destinations.php:116
+#: src/admin/class-wp-destinations-admin-meta-box.php:97
 msgid "WP Destinations"
 msgstr ""
 
-#: wp-destinations.php:141
+#: src/admin/class-wp-destinations-admin-meta-box.php:125
 msgid "Add a location address"
 msgstr ""
 
-#: wp-destinations.php:148
+#: src/admin/class-wp-destinations-admin-meta-box.php:138
 msgid "Get the Coordinates"
 msgstr ""
 
-#: wp-destinations.php:151
+#: src/admin/class-wp-destinations-admin-meta-box.php:142
 msgid "Latitude"
 msgstr ""
 
-#: wp-destinations.php:158
+#: src/admin/class-wp-destinations-admin-meta-box.php:154
 msgid "Longitude"
+msgstr ""
+
+#: src/admin/class-wp-destinations-admin-scripts.php:81
+msgid ""
+"You haven’t created latitude and longitude coordinates for your address."
+msgstr ""
+
+#: src/admin/class-wp-destinations-admin-settings.php:44
+msgid "Google Maps API Key"
+msgstr ""
+
+#: src/admin/class-wp-destinations-admin-settings.php:61
+msgid "Google Maps Client ID"
+msgstr ""
+
+#: src/admin/class-wp-destinations-admin-settings.php:82
+msgid "Enter your Google Maps JS API Key or Client ID here."
+msgstr ""
+
+#: src/admin/class-wp-destinations-admin-settings.php:98
+#, php-format
+msgid ""
+"Enter your Google Maps API Authentication Key. Refer to <a href=\"%s\" "
+"target=\"_blank\">Google&rsquo;s Maps JavaScript API documentation</a> to "
+"learn more."
+msgstr ""
+
+#: src/admin/class-wp-destinations-admin-settings.php:142
+#, php-format
+msgid ""
+"For Google Maps APIs Premium Plan license holders that use the alternative "
+"Google Maps API Client ID. Refer to <a href=\"%s\" target=\"_blank"
+"\">Google&rsquo;s Maps JavaScript API documentation</a> to learn more."
 msgstr ""
 
 #. Plugin URI of the plugin/theme
